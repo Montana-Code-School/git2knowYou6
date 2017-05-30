@@ -5,11 +5,22 @@
 	<style>
 		body {
 			background-color: black;
+			color: black;
 		}
+		#ogDesign {
+			width: 30%;
+			height: auto;
+		}
+		#self {
+			width: 20%;
+			height: auto;
+			border-radius: 50%
+		}
+
+
 
 		.banner {
 			background-color: #808080;
-			color: black;
 			text-align: center;
 			margin: 20px, 0px, 30px, 0px;
 		}
@@ -17,6 +28,7 @@
 			background-color: silver;
 			color: black;
 			margin: 150px, 50px, 80px, 50px;
+			border-radius: 10px;
 		}
 		#bottomBanner {
 			padding-top: 50px;
@@ -27,7 +39,7 @@
 			padding-bottom: 20px;
 		}
 
-		#title {
+		.title {
 			font-size: 250%;
 		}
 
@@ -41,7 +53,7 @@
 			transition: color 350ms, text-shadow 2s ;
 			/*transition: color 1s ease;*/
 			color: #FFFFFF;
-			text-shadow: 0px 0px 15px #FFF900;
+			text-shadow: 0px 0px 10px #FFF900;
 		}
 	</style>
 
@@ -50,7 +62,7 @@
 <body>
 	<img> </img>
 	<div class="banner" id="topBanner">
-		<span id="title">Welcome to Brude Entertainment</span>
+		<span class="title">Welcome to Brude Entertainment</span>
 		<span class="topButtons">
 			<a>Who</a>
 			 <a>What</a>
@@ -58,7 +70,15 @@
 			 <a>Why</a>
 		 </span>
 
+	</div>
 
+	<div id="mainBanner">
+	<h1 class="title" style = "text-align: center" >WHO</h1>
+	<h3> So this is where I speak of myself on my website, so for the time I'll put some solid info about myself.</h3>
+	<p> I have found an interest in programming for the past year, and decided to take a step toward the right direction. Working on not only making this about me page...about me, I am also aiming to make it similar to this image
+	</p>
+	<img id="self" src = "Quinn_Images/15977380_1743948022599547_6797761039677903054_n.jpeg" alt="Self">
+	<img id="ogDesign" src="Quinn_Images/Bruderer_A12_WebHome.jpg" alt="Original design">
 	</div>
 </body>
 
