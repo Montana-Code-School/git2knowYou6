@@ -4,23 +4,23 @@
 
 		<title>Timothy's Webpage</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-		<meta charset="UTF-8" />
 		<style type ="text/css">
-			
-			#about{
-				font-size:150%;
-				font-weight:bold;
-			}
-			.clear{
-				clear:both;
-			}lorem
-			#container{
-				column-count:3;
-				-webkit-column-count:3;
-				-moz-column-count:3;
+			body{
 
-				column-rule-style:solid;
-				column-rule-color:grey;
+
+			}
+			#comedy{
+				clear:both;
+
+			}
+			#title{
+				color:red;
+			}
+			#me{
+				display:none;
+				height:100%;
+				width:100%;
+				background: linear-gradient(to top left, lightblue, white);
 			}
 			#dos{
 				column-count:2;
@@ -31,6 +31,17 @@
 				column-rule-color:grey;
 				clear:both;
 			}
+			#space{
+				column-span:all;
+			}
+			#container{
+				column-count:3;
+				-webkit-column-count:3;
+				-moz-column-count:3;
+
+				column-rule-style:solid;
+				column-rule-color:grey;
+			}
 			#firstColumn{
 				/*background-color:grey; */
 				column-span:all;
@@ -38,11 +49,9 @@
 				font-family:cursive;
 				width:180px;
 			}
-			#me{
-				display:none;
-				height:100%;
-				width:100%;
-				background: linear-gradient(to top left, lightblue, white);
+			#about{
+				font-size:150%;
+				font-weight:bold;
 			}
 			.painting{
 				width:200px;
@@ -50,18 +59,21 @@
 				float:left;
 				margin:2px;
 			}
-			#space{
-				column-span:all;
+			#plans{
+				clear:both;
 			}
-			#title{
-				color:red;
+			#videoSet{
+				clear:both;
+			}
+			#right{
+				clear:right;
 			}
 		</style>
 	</head>
 	<body>
 		<h1 id="title">This is Timothy's Page</h1>
-		<button id="myButton" type='submit'>Hello</button>
-		<a href="http://www.google.com"><button id="myButton2" type='submit'>Leave</button></a>
+		<button id="myButton" type='submit'>Say Hello</button>
+
 		<div id ="me">
 			
 			<div id="container">
@@ -97,26 +109,23 @@
 				<p>The center of the sun is very very very very very very very hot. Approximately 15 million degrees Kelvin</p>
 				<p>Computers wouldn't be available today without physics</p>
 				<p>Quantum entanglement helps make Quantum computers exponentially faster than normal computers</p>
-				<p>The James Webb Telescope will become the largest telescopes in orbit around Earth bigger than twice the diameter of Hubble next year in october</p>
-				<p>China was able to create a stable plasma at 50 million Kelvin or around 90 million degrees Fahrenheit for 102 seconds last year</p>
-
 			</div>
 			<hr>
-			<!--future -->
-			<div class="clear">
+
+			<div id ="plans">
 				<h1 id="future">Future plans</h1>
 				<ol>
 					<li>Get really amazing at coding</li>
 					<li>Find work around the Pacific Northwest</li>
-					<li>Save up money to buy a Mercedes Sprinter<ul><li>Really open for customizing a travel van</li></ul></li>
+					<li>Save up money to buy a Mercedes Sprinter</li>
 					<li>Become a coding nomad traveling among climbing areas</li>
 				</ol>
 
 			</div>
 
 			<hr>
-			<!--short video  -->
-			<div class="clear">
+
+			<div id="videoSet">
 				<h2>My usual Morning</h2>
 
 				<video width="320" height="240" controls id="video">
@@ -125,18 +134,17 @@
         
         		<button id="play">Play</button>
 
-        		<p class="clear">Can't live without that neck pop</p>
+        		<p id="right">Can't live without that neck pop</p>
 
 			</div>
-			<!--Audio file, I initially had an autoplay function inline
-			then took it out -->
+
 			<div>
-				<audio controls id="audio">
-					<source src ="SampleAudio.mp3" type="audio/mp3">
+				<audio controls id="audio" autoplay>
+				<source src ="SampleAudio.mp3" type="audio/mp3">
 				</audio>	
 			</div>
-			<!-- Melissa McCarthy skit on snl -->
-			<div class="clear">
+
+			<div id="comedy">
 				<h1 id ="comedy">Favorite Comedy Skit</h1>
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/UWuc18xISwI?ecver=1" frameborder="0" allowfullscreen></iframe>
 			</div>
@@ -146,20 +154,28 @@
 
 		<script type='text/javascript'>
 
-		//function for Transition from first page to second with a buttn
+		var title = document.getElementById("firstColumn");
+
+		function stext(){
+			title.style.color="green";
+		}
+		function htext(){
+			title.style.color ="blue";
+		}
+
+
 		function displayThis(){
 			document.getElementById("myButton").style.display="none";
-			document.getElementById("myButton2").style.display="none";
 			document.getElementById("me").style.display = "block";
 		}
-		// onclick function acting when button is clicked to come into the page 
+		 
 		document.getElementById("myButton").onclick = function(){
-			document.getElementById("title").innerHTML ="Warning, this page is owned and operated by your local squirrel community";
+			document.getElementById("title").innerHTML ="This page is owned and operated by your local squirrel community and their current indentured servant...";
 			document.getElementById("title").style.color="blue";
-			// calling displayThis function
+			
 			displayThis();
 		};
-		// function for the button to play the neck cracking video
+
 		document.getElementById("play").onclick = function(){
                 if(document.getElementById("video").paused){
                    document.getElementById("play").innerHTML = "Pause";
@@ -170,6 +186,8 @@
                    }
                
             };
+
+     	
 	</script>
 	</body>
 </html>
